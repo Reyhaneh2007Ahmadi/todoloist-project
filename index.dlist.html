@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <link rel="stylesheet" href="foundation/foundation.min.css">
+    <!-- main styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="grid-container">
+            <h1>TODOLIST</h1>
+            <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell">
+                    <input class="search" type="text" name="title" id="title" placeholder="what needs to be done">
+                </div>
+                <div class="medium-6 cell">
+                    <button class="submit button btn" >+</button>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <ul class="list-group">
+                    <li v-for="(work,i) in dolist">{{work.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="vue.global.js"></script>
+    <script src="foundation/app.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

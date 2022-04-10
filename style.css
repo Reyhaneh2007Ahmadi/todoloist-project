@@ -4,6 +4,7 @@ background-color: #489cc1;
 h1{
     text-align: center;
     color: #3b5a79;
+    font-weight: bold;
 }
 .app{
     background-color: #fff;
@@ -17,5 +18,35 @@ h1{
     font-size: 15px;
 }
 .search , .btn{
-    margin-left: 250px;
+    margin-left: 240px;
+}
+::placeholder{
+    font-size: 17pt;
+    color: rgb(160, 160, 160);
+    text-align: center;
+}
+#checkbox{
+ display: flex;
+ width: 1000px;
+ margin-top: 3px;
+ font-size: 13pt;
+ color: #6ca5c2;
+ align-items: center;
+ display: table;
+ border-top:solid 1.5px #e5e9ec;
+ 
+ 
+}
+.container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    display: inline-block;
+}
+.valled{
+    align-items: center;
+
+}
+.done {
+    text-decoration: line-through;
 }

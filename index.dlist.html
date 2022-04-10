@@ -13,24 +13,25 @@
     <div class="app">
         <div class="grid-container">
             <h1>TODOLIST</h1>
-            <div class="grid-x grid-padding-x">
+            <div class="grid-x grid-padding-x valled">
                 <div class="medium-6 cell">
-                    <input class="search" type="text" name="title" id="title" placeholder="what needs to be done">
+                    <input class="search"type="text"v-model="newDolistInput" name="title" id="title" placeholder="what needs to be done?" @keyup.enter="addDolist()">
                 </div>
                 <div class="medium-6 cell">
-                    <button class="submit button btn" >+</button>
+                    <button type="submit" v-on:click.prevent="addDolist()" class="submit button btn" >+</button>
                 </div>
             </div>
-            <div class="grid-x grid-padding-x">
-                <ul class="list-group">
-                    <li v-for="(work,i) in dolist">{{work.title}}</li>
-                </ul>
+            <div class="grid-x grid-padding-x container">
+                <label id="checkbox" @click="toggle = !toggle"
+                :class="{done:work.completed}" v-for="(work,i) in dolist" :key="i" @click="toggleDone()" ><input type="checkbox">{{work.title}}
+                </label>
+                 </div>
+               </div>
             </div>
-        </div>
+        
     </div>
     </div>
     <script src="vue.global.js"></script>
-    <script src="foundation/app.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

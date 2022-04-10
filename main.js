@@ -1,11 +1,11 @@
 Vue.createApp({
     data() {
       return {
-        message: 'Hello Vue!',
+
         dolist:[
             {
                 title:'do home works',
-                completed:true
+                completed:false
             },
             {
                 title:'read books',
@@ -17,9 +17,44 @@ Vue.createApp({
             },
             {
                 title:'sleep',
-                completed:true
+                completed:false
             },
-        ]
+        ],
+        newDolistInput:'',
       }
+    },
+    methods:{
+        toggleDone(){
+
+        },
+        addDolist(){
+           
+           var newDolist = {
+                    title: this.newDolistInput ,
+                    completed:false
+            }
+            this.dolist.push(newDolist)
+            this.newDolistInput = '' 
+            
+        },
+        
+        clearCompleted() {
+            this.tasks = this.tasks.filter(this.inProgress);
+          },
+          inProgress(task) {
+            return ! this.isCompleted(task);
+          },
+          isCompleted(task) {
+            return task.completed;
+          }
+        // methods: {
+        //     toggleTodo(todo) {
+        //         item.completed = !item.completed
+        //     },
+        //   },
+        //   completeTask(task) {
+        //     task.completed = ! task.completed;
+        //   },
+        // toggle:false,
     }
-  }).mount('#app')
+  }).mount('.app')

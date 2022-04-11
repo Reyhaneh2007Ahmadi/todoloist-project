@@ -23,7 +23,7 @@
             </div>
             <div class="grid-x grid-padding-x container">
                 <label id="checkbox" @click="toggle = !toggle"
-                :class="{done:work.completed}" v-for="(work,i) in dolist" :key="i" @click="toggleDone()" ><input type="checkbox">{{work.title}}
+                :class="{done:work.completed}" v-for="(work,i) in dolist" :key="i" @click="toggleDone()"  @click="newStatus = !newStatus"><input type="checkbox">{{work.title}}
                 </label>
                  </div>
                </div>

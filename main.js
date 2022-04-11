@@ -1,7 +1,8 @@
 Vue.createApp({
     data() {
       return {
-
+        newDolistInput:'',
+        newStatus:true,
         dolist:[
             {
                 title:'do home works',
@@ -20,7 +21,7 @@ Vue.createApp({
                 completed:false
             },
         ],
-        newDolistInput:'',
+       
       }
     },
     methods:{
@@ -36,25 +37,6 @@ Vue.createApp({
             this.dolist.push(newDolist)
             this.newDolistInput = '' 
             
-        },
-        
-        clearCompleted() {
-            this.tasks = this.tasks.filter(this.inProgress);
-          },
-          inProgress(task) {
-            return ! this.isCompleted(task);
-          },
-          isCompleted(task) {
-            return task.completed;
-          }
-        // methods: {
-        //     toggleTodo(todo) {
-        //         item.completed = !item.completed
-        //     },
-        //   },
-        //   completeTask(task) {
-        //     task.completed = ! task.completed;
-        //   },
-        // toggle:false,
+        }
     }
   }).mount('.app')
